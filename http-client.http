@@ -1,0 +1,25 @@
+### Create Song
+POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+  "title": "FOLLOW ME 2"
+}
+
+
+### FETCH ALL SONGS
+GET http://localhost:3000/songs
+
+
+### FETCH SONG BY ID
+GET http://localhost:3000/songs/3
+
+
+### UPDATE SONG
+PATCH http://localhost:3000/songs/1
+Content-Type: application/json
+
+{
+  "title" : "New Title"
+}
+
