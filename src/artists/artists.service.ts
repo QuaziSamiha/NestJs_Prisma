@@ -1,19 +1,21 @@
 import { Injectable } from '@nestjs/common';
 import { UpdateArtistDto } from './dto/update-artist.dto';
-import { CreateArtistDto } from './dto/create-artist.dto';
-// import { Prisma } from '@prisma/client';
+import { Prisma } from '@prisma/client';
+import { PrismaService } from 'src/prisma.service';
 
 @Injectable()
 export class ArtistsService {
-  // create(createArtistDto: Prisma.ArtistCreateInput) {
-  //   return this.prisma.artist.create({
-  //     data: createArtistDto,
-  //   });
-  // }
-  create(createArtistDto: CreateArtistDto) {
-    console.log(createArtistDto);
-    return 'This action adds a new artist';
+  constructor(private prisma: PrismaService) {}
+
+  create(createArtistDto: Prisma.ArtistCreateInput) {
+    return this.prisma.artist.create({
+      data: createArtistDto,
+    });
   }
+  // create(createArtistDto: CreateArtistDto) {
+  //   console.log(createArtistDto);
+  //   return 'This action adds a new artist';
+  // }
 
   findAll() {
     return `This action returns all artists`;
