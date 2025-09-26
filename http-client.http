@@ -3,7 +3,8 @@ POST http://localhost:3000/songs
 Content-Type: application/json
 
 {
-  "title": "FOLLOW ME 2"
+  "title": "FOLLOW ME 2",
+  "artistId": 1
 }
 
 
@@ -20,8 +21,9 @@ PATCH http://localhost:3000/songs/1
 Content-Type: application/json
 
 {
-  "title" : "New Title"
+  "title": "New Title"
 }
+
 
 ### CREATE ARTIST
 POST http://localhost:3000/artists
@@ -31,5 +33,3 @@ Content-Type: application/json
   "title": "Okko",
   "name": "Vondul"
 }
-
-

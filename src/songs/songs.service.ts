@@ -12,8 +12,13 @@ export class SongsService {
     });
   }
 
+  // findAll() {
+  //   return `This action returns all songs`;
+  // }
   findAll() {
-    return `This action returns all songs`;
+    return this.prisma.song.findMany({
+      include: { artist: true },
+    });
   }
 
   findOne(id: number) {

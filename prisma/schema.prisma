@@ -27,3 +27,17 @@ model Artist {
   name  String
   songs Song[]
 }
+
+model User {
+  id      Int      @id @default(autoincrement())
+  name    String
+  profile Profile?
+}
+
+model Profile {
+  id     Int    @id @default(autoincrement())
+  user   User   @relation(fields: [userId], references: [id])
+  userId Int    @unique
+  photo  String
+  phone  String
+}
